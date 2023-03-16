@@ -1,0 +1,64 @@
+
+syntax = "proto3";
+
+message SchemaStoreContentDto {
+
+    message SchemaHistory {
+        optional int32 id = 1; // 历史id
+        optional string schemaContentId = 2; // 所属的配置ID
+        optional string historySchemaContent = 3; // 历史内容
+        optional int32 historyUpdateTime = 4; // 更新时间
+        optional string remark = 5; // 版本提示，例如 feat: 增加xx输入框
+    }
+
+    optional number id = 0;
+    optional string key = 1; // 唯一关键key
+    optional string name = 2; // 名称
+    repeated SchemaHistory history = 3; // 历史记录，以便浏览回退
+    optional string content = 4; // 配置内容
+    optional string preReleaseContent = 5; // 预发布的配置
+    optional string creator = 6; // 创建者
+    repeated string adminList = 7; // 管理员列表
+    optional bytes authLevel = 8; // 用户的权限等级
+}
+
+message GetAllSchemaStoreReq {
+    string token = 1;
+}
+
+message GetAllSchemaStoreResp {
+    int32 ret = 1;
+    repeated SchemaStoreContentDto schemaStoreContentList = 2;
+}
+
+message SetSchemaStoreReq {
+    number id = 0;
+    string key = 1; // 输入key
+    string content = 2;
+    string creator = 3;
+}
+
+message SetSchemaStoreResp {
+    int32 ret = 1; 
+    optional string errMsg = 2; // 错误原因
+}
+
+message GetSchemaStoreByKeyReq {
+    string key = 1;
+}
+
+message GetSchemaStoreByKeyResp {
+    int32 ret = 1;
+    optional string errMsg = 2;
+    optional SchemaStoreContentDto content = 3;
+}
+
+service SchemaStoreService {
+    rpc GetAllSchemaStore (GetAllSchemaStoreReq) returns (GetAllSchemaStoreResp);
+    rpc SetSchemaStore (SetSchemaStoreReq) returns (SetSchemaStoreResp);
+    rpc GetSchemaStoreByKey (GetSchemaStoreByKeyReq) returns (GetSchemaStoreByKeyResp);
+}
+
+
+
+  

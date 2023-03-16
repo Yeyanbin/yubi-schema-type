@@ -1,0 +1,17 @@
+{
+  "name": "yubi-schema-type",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ts-demo": "node ./scripts/toTs.mjs root=schemaStore.proto output=schemaStore.ts",
+    "ts-proto": "node ./scripts/toTs.mjs root=/protos/ output=./types/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "pbts": "^2.0.2",
+    "protobufjs": "^7.2.2"
+  }
+}
