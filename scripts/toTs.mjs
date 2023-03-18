@@ -37,9 +37,9 @@ const main = () => {
     const pbLoad = protobuf.loadSync(filePath);
     const pdContent = pbts.parseProtoRoot(pbLoad, { isParamOptional: true });
 
-    console.log(`[parse] file: ${newDir.join('/')}/${newFileName}`)
+    console.log(`[parse] file: ${newDir}/${newFileName}`)
     createFileByDirList(newDir, newFileName, pdContent);
-    console.log(`[Success] "${newDir.join('/')}/${newFileName}" is converted successfully`);
+    console.log(`[Success] "${newDir}/${newFileName}" is converted successfully`);
   })
 };
 
