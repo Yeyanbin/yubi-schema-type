@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ts-demo": "node ./scripts/toTs.mjs root=schemaStore.proto output=schemaStore.ts",
-    "ts-proto": "node ./scripts/toTs.mjs root=./protos output=types",
+    "ts-proto-demo": "node ./scripts/toTs.mjs root=./protos output=types",
+    "ts-proto": "node ./scripts/toTs.mjs root=./protos output=../types",
     "demo": "node ./scripts/demo.mjs root=schemaStore.proto output=schemaStore.ts"
 
   },
