@@ -1,5 +1,5 @@
 
-import { GetAllSchemaStore, SetSchemaStore, GetSchemaStoreByKey } from './schemaStore';
+import { GetAllSchemaStore, SetSchemaStore, GetSchemaStoreByKey } from './types/schemaStore';
 
 interface IApi {
     getAllSchemaStore: GetAllSchemaStore;
