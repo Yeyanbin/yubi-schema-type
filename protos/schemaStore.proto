@@ -11,7 +11,7 @@ message SchemaStoreContentDto {
         optional string remark = 5; // 版本提示，例如 feat: 增加xx输入框
     }
 
-    optional number id = 0;
+    optional int32 id = 0;
     optional string key = 1; // 唯一关键key
     optional string name = 2; // 名称
     repeated SchemaHistory history = 3; // 历史记录，以便浏览回退
@@ -32,7 +32,7 @@ message GetAllSchemaStoreResp {
 }
 
 message SetSchemaStoreReq {
-    number id = 0;
+    int32 id = 0;
     string key = 1; // 输入key
     string content = 2;
     string creator = 3;

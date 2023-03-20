@@ -71,5 +71,6 @@ export const search = ({ fileName, root }, fileCallback) => {
       });
     }
   }
+// fs.readFileSync()
   searchFileList({ fileName, root, level: 0 })
 }
